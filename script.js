@@ -177,6 +177,20 @@ moveLeft.addEventListener("mousedown", function () {
 moveRight.addEventListener("mousedown", function () {
   fish.speedX += 3;
 });
+
+moveUp.addEventListener("touchstart", function () {
+  fish.speedY -= 3;
+});
+moveDown.addEventListener("touchstart", function () {
+  fish.speedY += 3;
+});
+moveLeft.addEventListener("touchstart", function () {
+  fish.speedX -= 3;
+});
+moveRight.addEventListener("touchstart", function () {
+  fish.speedX += 3;
+});
+
 function resetSpeed() {
   fish.speedX = 0;
   fish.speedY = 0;
@@ -185,6 +199,11 @@ moveUp.addEventListener("mouseup", resetSpeed);
 moveDown.addEventListener("mouseup", resetSpeed);
 moveLeft.addEventListener("mouseup", resetSpeed);
 moveRight.addEventListener("mouseup", resetSpeed);
+
+moveUp.addEventListener("touchend", resetSpeed);
+moveDown.addEventListener("touchend", resetSpeed);
+moveLeft.addEventListener("touchend", resetSpeed);
+moveRight.addEventListener("touchend", resetSpeed);
 
 addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp" || e.key == "Up") {
