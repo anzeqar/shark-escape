@@ -82,3 +82,8 @@ button {
   position: relative;
   left: 20%;
 }
+.footer {
+  position: relative;
+  left: 0px;
+  bottom: 400px;
+}
