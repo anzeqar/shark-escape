@@ -143,7 +143,7 @@ function gameFrame() {
   fish.newPosition();
   fish.update();
   gameConfig.frames += 1;
-  if (gameConfig.frames == 1 || intervalFrames(10)) {
+  if (gameConfig.frames == 1 || intervalFrames(12)) {
     x = gameConfig.canvas.width;
     y = gameConfig.canvas.height - 200;
     maxHeight = 417;
@@ -251,9 +251,11 @@ function showButtons() {
     buttons.style.display = "flex";
   }
 }
+alert("The Game Starts Within 3 Seconds");
 
 setTimeout(() => {
   document.querySelector(".footer").style.display = "none";
-}, 2000);
-
-startGame();
+}, 3000);
+setTimeout(() => {
+  startGame();
+}, 3000);
