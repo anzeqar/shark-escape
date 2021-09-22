@@ -37,6 +37,9 @@ var gameConfig = {
   },
   stop: function () {
     clearInterval(this.interval);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   },
 };
 
@@ -215,7 +218,7 @@ addEventListener("keyup", (e) => {
     fish.speedX = 0;
   }
 });
-var buttonVisibility = "show";
+var buttonVisibility = "hide";
 var showHide = document.querySelector("#show-hide");
 var buttons = document.querySelector(".buttons");
 function showButtons() {
