@@ -28,7 +28,7 @@ var gameConfig = {
 
     this.context = this.canvas.getContext("2d");
     div.insertBefore(this.canvas, div.childNodes[0]);
-    this.interval = setInterval(gameFrame, 10);
+    this.interval = setInterval(gameFrame, 60);
     this.frames = 0;
   },
   clear: function () {
@@ -136,13 +136,13 @@ function gameFrame() {
   }
 
   gameConfig.clear();
-  background.x -= 3;
+  background.x = 1;
   background.newPosition();
   background.update();
   fish.newPosition();
   fish.update();
   gameConfig.frames += 1;
-  if (gameConfig.frames == 1 || intervalFrames(160)) {
+  if (gameConfig.frames == 1 || intervalFrames(15)) {
     x = gameConfig.canvas.width;
     y = gameConfig.canvas.height - 200;
     maxHeight = 417;
@@ -155,11 +155,11 @@ function gameFrame() {
     );
   }
   for (i = 0; i < sharks.length; i += 1) {
-    sharks[i].x += -1;
+    sharks[i].x += -11;
     sharks[i].update();
   }
 
-  shark.x += -1;
+  shark.x += -11;
   shark.update();
   score.text = "Score: " + (gameConfig.frames / 50).toFixed(0);
   score.update();
