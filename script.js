@@ -29,7 +29,7 @@ var gameConfig = {
 
     this.context = this.canvas.getContext("2d");
     div.insertBefore(this.canvas, div.childNodes[0]);
-    this.interval = setInterval(gameFrame, 20);
+    this.interval = setInterval(gameFrame, 10);
     this.frames = 0;
   },
   clear: function () {
@@ -178,19 +178,6 @@ moveRight.addEventListener("mousedown", function () {
   fish.speedX += 3;
 });
 
-moveUp.addEventListener("touchstart", function () {
-  fish.speedY -= 3;
-});
-moveDown.addEventListener("touchstart", function () {
-  fish.speedY += 3;
-});
-moveLeft.addEventListener("touchstart", function () {
-  fish.speedX -= 3;
-});
-moveRight.addEventListener("touchstart", function () {
-  fish.speedX += 3;
-});
-
 function resetSpeed() {
   fish.speedX = 0;
   fish.speedY = 0;
@@ -204,6 +191,19 @@ moveUp.addEventListener("touchend", resetSpeed);
 moveDown.addEventListener("touchend", resetSpeed);
 moveLeft.addEventListener("touchend", resetSpeed);
 moveRight.addEventListener("touchend", resetSpeed);
+
+moveUp.addEventListener("touchmove", function () {
+  fish.speedY -= 3;
+});
+moveDown.addEventListener("touchmove", function () {
+  fish.speedY += 3;
+});
+moveLeft.addEventListener("touchmove", function () {
+  fish.speedX -= 3;
+});
+moveRight.addEventListener("touchmove", function () {
+  fish.speedX += 3;
+});
 
 addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp" || e.key == "Up") {
@@ -252,7 +252,8 @@ function showButtons() {
   }
 }
 
-startGame();
 setTimeout(() => {
   document.querySelector(".footer").style.display = "none";
 }, 5000);
+
+startGame();
