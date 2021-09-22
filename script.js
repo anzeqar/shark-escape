@@ -37,6 +37,7 @@ var gameConfig = {
   stop: function () {
     clearInterval(this.interval);
     setTimeout(() => {
+      alert("Your Final " + score.text + ", Press OK to Restart Game");
       window.location.reload();
     }, 1000);
   },
@@ -165,16 +166,16 @@ function gameFrame() {
   score.update();
 }
 moveUp.addEventListener("mousedown", function () {
-  fish.speedY -= 3;
+  fish.speedY -= 15;
 });
 moveDown.addEventListener("mousedown", function () {
-  fish.speedY += 3;
+  fish.speedY += 15;
 });
 moveLeft.addEventListener("mousedown", function () {
-  fish.speedX -= 3;
+  fish.speedX -= 15;
 });
 moveRight.addEventListener("mousedown", function () {
-  fish.speedX += 3;
+  fish.speedX += 15;
 });
 
 function resetSpeed() {
@@ -192,27 +193,27 @@ moveLeft.addEventListener("touchend", resetSpeed);
 moveRight.addEventListener("touchend", resetSpeed);
 
 moveUp.addEventListener("touchstart", function () {
-  fish.speedY -= 3;
+  fish.speedY -= 15;
 });
 moveDown.addEventListener("touchstart", function () {
-  fish.speedY += 3;
+  fish.speedY += 15;
 });
 moveLeft.addEventListener("touchstart", function () {
-  fish.speedX -= 3;
+  fish.speedX -= 15;
 });
 moveRight.addEventListener("touchstart", function () {
-  fish.speedX += 3;
+  fish.speedX += 15;
 });
 
 addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp" || e.key == "Up") {
-    fish.speedY -= 2;
+    fish.speedY -= 15;
   } else if (e.key == "ArrowDown" || e.key == "Down") {
-    fish.speedY += 2;
+    fish.speedY += 15;
   } else if (e.key == "ArrowLeft" || e.key == "Left") {
-    fish.speedX -= 2;
+    fish.speedX -= 15;
   } else if (e.key == "ArrowRight" || e.key == "Right") {
-    fish.speedX += 2;
+    fish.speedX += 15;
   } else {
     fish.speedX = 0;
     fish.speedY = 0;
@@ -253,6 +254,6 @@ function showButtons() {
 
 setTimeout(() => {
   document.querySelector(".footer").style.display = "none";
-}, 5000);
+}, 2000);
 
 startGame();
