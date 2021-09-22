@@ -61,7 +61,6 @@ function component(width, height, color, x, y, type) {
     if (type == "image" || type == "background") {
       ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
       if (type == "background") {
-        console.log(true);
         ctx.drawImage(
           this.image,
           this.x + this.width,
@@ -164,23 +163,18 @@ function gameFrame() {
   score.update();
 }
 moveUp.addEventListener("mousedown", function () {
-  console.log("mousedownx");
   fish.speedY -= 3;
 });
 moveDown.addEventListener("mousedown", function () {
-  console.log("mousedownx");
   fish.speedY += 3;
 });
 moveLeft.addEventListener("mousedown", function () {
-  console.log("mousedownx");
   fish.speedX -= 3;
 });
 moveRight.addEventListener("mousedown", function () {
-  console.log("mousedownx");
   fish.speedX += 3;
 });
 function resetSpeed() {
-  console.log("mouseupx");
   fish.speedX = 0;
   fish.speedY = 0;
 }
@@ -190,7 +184,6 @@ moveLeft.addEventListener("mouseup", resetSpeed);
 moveRight.addEventListener("mouseup", resetSpeed);
 
 addEventListener("keydown", (e) => {
-  console.log(e.keyCode);
   if (e.key == "ArrowUp" || e.key == "Up") {
     fish.speedY -= 2;
   } else if (e.key == "ArrowDown" || e.key == "Down") {
