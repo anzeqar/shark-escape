@@ -240,4 +240,4 @@ function showButtons() {
 startGame();
 setTimeout(() => {
   document.querySelector(".footer").style.display = "none";
-}, 2000);
+}, 5000);

@@ -83,7 +83,7 @@ button {
   left: 20%;
 }
 .footer {
-  position: relative;
-  left: 0px;
-  bottom: 400px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
 }
