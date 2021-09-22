@@ -143,7 +143,7 @@ function gameFrame() {
   fish.newPosition();
   fish.update();
   gameConfig.frames += 1;
-  if (gameConfig.frames == 1 || intervalFrames(15)) {
+  if (gameConfig.frames == 1 || intervalFrames(10)) {
     x = gameConfig.canvas.width;
     y = gameConfig.canvas.height - 200;
     maxHeight = 417;
