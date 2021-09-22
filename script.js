@@ -3,7 +3,6 @@ const moveUp = document.querySelector("#up");
 const moveDown = document.querySelector("#down");
 const moveLeft = document.querySelector("#left");
 const moveRight = document.querySelector("#right");
-var heightRatio = 1.7777777777;
 var fish;
 var background;
 var score;
@@ -25,7 +24,7 @@ var gameConfig = {
   canvas: document.createElement("canvas"),
   start: function () {
     this.canvas.height = 486;
-    this.canvas.width = this.canvas.height * 1.777777;
+    this.canvas.width = 864;
 
     this.context = this.canvas.getContext("2d");
     div.insertBefore(this.canvas, div.childNodes[0]);
@@ -137,13 +136,13 @@ function gameFrame() {
   }
 
   gameConfig.clear();
-  background.x -= 1;
+  background.x -= 3;
   background.newPosition();
   background.update();
   fish.newPosition();
   fish.update();
   gameConfig.frames += 1;
-  if (gameConfig.frames == 1 || intervalFrames(120)) {
+  if (gameConfig.frames == 1 || intervalFrames(160)) {
     x = gameConfig.canvas.width;
     y = gameConfig.canvas.height - 200;
     maxHeight = 417;
@@ -192,16 +191,16 @@ moveDown.addEventListener("touchend", resetSpeed);
 moveLeft.addEventListener("touchend", resetSpeed);
 moveRight.addEventListener("touchend", resetSpeed);
 
-moveUp.addEventListener("touchmove", function () {
+moveUp.addEventListener("touchstart", function () {
   fish.speedY -= 3;
 });
-moveDown.addEventListener("touchmove", function () {
+moveDown.addEventListener("touchstart", function () {
   fish.speedY += 3;
 });
-moveLeft.addEventListener("touchmove", function () {
+moveLeft.addEventListener("touchstart", function () {
   fish.speedX -= 3;
 });
-moveRight.addEventListener("touchmove", function () {
+moveRight.addEventListener("touchstart", function () {
   fish.speedX += 3;
 });
 
